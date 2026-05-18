@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam's Septic Service, Inc. | Tampa, FL | Est. 2002</title>
+    <meta name="description" content="Adam's Septic Service, Inc. provides reliable septic pumping, drain field installs, lift stations, inspections, and RV pumping in Tampa, FL. Call (813) 927-7789.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5632;
+            --primary-dark: #0f3d22;
+            --primary-light: #2a7a4a;
+            --accent: #d4a843;
+            --accent-light: #e8c76a;
+            --dark: #1a1a2e;
+            --gray-900: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-400: #9ca3af;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-700);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* SVG Icon base */
+        .icon-svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .icon-svg-lg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .icon-svg-xl {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* ========== TOP BAR ========== */
+        .top-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .top-bar a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .top-bar a:hover { color: var(--white); }
+
+        .top-bar .icon-svg {
+            width: 14px;
+            height: 14px;
+            fill: rgba(255,255,255,0.6);
+        }
+
+        /* ========== NAVIGATION ========== */
+        .navbar {
+            background: var(--white);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            padding: 10px 0;
+        }
+
+        .logo-img {
+            width: 72px;
+            height: 72px;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.2;
+        }
+
+        .logo-text .tagline {
+            font-size: 0.7rem;
+            color: var(--gray-400);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            transition: background 0.2s, transform 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .nav-cta .icon-svg { fill: var(--white); width: 16px; height: 16px; }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--gray-700);
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            color: var(--white);
+            padding: 100px 0 120px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15,61,34,0.92) 0%, rgba(26,86,50,0.85) 50%, rgba(42,122,74,0.8) 100%);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content { max-width: 700px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span { color: var(--accent-light); }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 36px;
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn .icon-svg { width: 18px; height: 18px; }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-primary .icon-svg { fill: var(--dark); }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212,168,67,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 56px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-light);
+        }
+
+        .stat p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        /* ========== TRUST BAR ========== */
+        .trust-bar {
+            background: var(--white);
+            padding: 24px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .trust-item .icon-svg {
+            fill: var(--primary);
+        }
+
+        /* ========== SERVICES ========== */
+        .services {
+            padding: 100px 0;
+            background: var(--gray-100);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(26,86,50,0.08);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 36px;
+            transition: all 0.3s;
+            border: 1px solid var(--gray-200);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(26,86,50,0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-icon .icon-svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ========== GALLERY ========== */
+        .gallery {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ========== ABOUT ========== */
+        .about {
+            padding: 100px 0;
+            background: var(--gray-100);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 480px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content .section-label { margin-bottom: 16px; }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            color: var(--gray-600);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .about-feature .check {
+            width: 24px;
+            height: 24px;
+            background: rgba(26,86,50,0.1);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .about-feature .check .icon-svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--primary);
+        }
+
+        /* ========== WHY CHOOSE US ========== */
+        .why-us {
+            padding: 100px 0;
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .why-us .section-label {
+            background: rgba(255,255,255,0.1);
+            color: var(--accent-light);
+        }
+
+        .why-us .section-header h2 { color: var(--white); }
+        .why-us .section-header p { color: rgba(255,255,255,0.7); }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+        }
+
+        .why-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .why-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+        }
+
+        .why-card-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(212,168,67,0.15);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .why-card-icon .icon-svg {
+            width: 26px;
+            height: 26px;
+            fill: var(--accent-light);
+        }
+
+        .why-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        /* ========== HOURS ========== */
+        .hours-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hours-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .hours-content p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .hours-card {
+            background: var(--gray-100);
+            border-radius: 16px;
+            padding: 36px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .hours-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hours-card h3 .icon-svg {
+            fill: var(--primary);
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 0.95rem;
+        }
+
+        .hours-row:last-child { border-bottom: none; }
+
+        .hours-row .day {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .hours-row .time {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .contact-info-box {
+            background: var(--primary-dark);
+            border-radius: 16px;
+            padding: 36px;
+            color: var(--white);
+        }
+
+        .contact-info-box h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .contact-row:last-child { margin-bottom: 0; }
+
+        .contact-row .icon-svg {
+            fill: var(--accent-light);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-row a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-row a:hover { color: var(--accent-light); }
+
+        .contact-row span {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* ========== SERVICE AREA ========== */
+        .service-area {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+
+        .area-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .area-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .area-content > p {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+        }
+
+        .area-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .area-tag {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            transition: all 0.2s;
+        }
+
+        .area-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* ========== CTA ========== */
+        .cta {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+
+        .cta-inner {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 14px;
+        }
+
+        .cta-inner p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .cta-btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .cta-btn-primary .icon-svg { fill: var(--white); }
+
+        .cta-btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(26,86,50,0.25);
+        }
+
+        .cta-btn-secondary {
+            background: var(--white);
+            color: var(--gray-900);
+            border: 1px solid var(--gray-200);
+        }
+
+        .cta-btn-secondary .icon-svg { fill: var(--gray-700); }
+
+        .cta-btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .cta-btn-secondary:hover .icon-svg { fill: var(--primary); }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-brand .name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 12px; }
+
+        .footer ul a {
+            color: rgba(255,255,255,0.55);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .footer ul a:hover { color: var(--white); }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: rgba(255,255,255,0.55);
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .footer-contact .icon-svg {
+            flex-shrink: 0;
+            margin-top: 3px;
+            fill: rgba(255,255,255,0.4);
+            width: 16px;
+            height: 16px;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            text-align: center;
+            color: rgba(255,255,255,0.35);
+            font-size: 0.85rem;
+        }
+
+        /* ========== FLOATING CTA (mobile) ========== */
+        .floating-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary-dark);
+            padding: 12px 24px;
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+        }
+
+        .floating-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .floating-cta .icon-svg { fill: var(--dark); width: 18px; height: 18px; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active { display: flex; }
+            .mobile-toggle { display: block; }
+
+            .hero { padding: 60px 0 80px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            .hero-stats { gap: 24px; flex-wrap: wrap; }
+            .stat h3 { font-size: 1.5rem; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-image { height: 300px; }
+
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+
+            .hours-grid { grid-template-columns: 1fr; gap: 32px; }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+
+            .cta-box { padding: 48px 28px; }
+            .cta-box h2 { font-size: 1.8rem; }
+            .cta-phone { font-size: 1.1rem; padding: 16px 28px; }
+
+            .services-grid { grid-template-columns: 1fr; }
+
+            .floating-cta { display: block; }
+            body { padding-bottom: 70px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .about-content h2 { font-size: 1.6rem; }
+            .hours-content h2 { font-size: 1.6rem; }
+            .area-content h2 { font-size: 1.6rem; }
+
+            .top-bar .container { flex-direction: column; text-align: center; }
+            .top-bar-left { justify-content: center; }
+
+            .hero-buttons { flex-direction: column; }
+            .btn { justify-content: center; }
+
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SVG sprite (hidden) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+        <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.94l-2.2 2.28z"/></symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></symbol>
+        <symbol id="icon-location" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></symbol>
+        <symbol id="icon-water" viewBox="0 0 24 24"><path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2C20 10.48 17.33 6.55 12 2z"/></symbol>
+        <symbol id="icon-layers" viewBox="0 0 24 24"><path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9l-9-7-9 7 1.63 1.27L12 16z"/></symbol>
+        <symbol id="icon-settings" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 00-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1112 8.4a3.6 3.6 0 010 7.2z"/></symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol>
+        <symbol id="icon-truck" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></symbol>
+        <symbol id="icon-tool" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+        <symbol id="icon-dollar" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></symbol>
+        <symbol id="icon-handshake" viewBox="0 0 24 24"><path d="M12.22 19.85c-.18.18-.5.21-.71 0L3.78 12.1c-.2-.2-.2-.51 0-.71l3.54-3.54c.2-.2.51-.2.71 0l1.77 1.77L12 7.41l2.2 2.2 1.77-1.76c.2-.2.51-.2.71 0l3.54 3.54c.2.2.2.51 0 .71l-7.73 7.73c-.2.22-.5.22-.27.02zM2 11h3v2H2v-2zm17 0h3v2h-3v-2z"/></symbol>
+        <symbol id="icon-home" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></symbol>
+    </svg>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="top-bar-item">
+                    <svg class="icon-svg"><use href="#icon-clock"/></svg>
+                    <span>Open 7 Days a Week: 8:00 AM - 7:00 PM</span>
+                </div>
+                <div class="top-bar-item">
+                    <svg class="icon-svg"><use href="#icon-location"/></svg>
+                    <span>Tampa, FL</span>
+                </div>
+            </div>
+            <a href="tel:8139277789">Call Now: (813) 927-7789</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Adam's Septic Service, Inc. Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="name">Adam's Septic Service</span>
+                    <span class="tagline">Est. 2002 &middot; Tampa, FL</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#hours">Hours &amp; Contact</a></li>
+                <li><a href="tel:8139277789" class="nav-cta"><svg class="icon-svg"><use href="#icon-phone"/></svg> (813) 927-7789</a></li>
+            </ul>
+            <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="images/truck.png" alt="Adam's Septic Service truck">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Trusted Local Septic Experts &middot; Est. 2002</div>
+                <h1>Tampa Bay's Most <span>Reliable Septic</span> Service Provider</h1>
+                <p>From routine pumping to complete drain field installations, Adam's Septic Service has been keeping Tampa Bay properties flowing right since 2002.</p>
+                <div class="hero-buttons">
+                    <a href="tel:8139277789" class="btn btn-primary">
+                        <svg class="icon-svg"><use href="#icon-phone"/></svg> Call (813) 927-7789
+                    </a>
+                    <a href="#services" class="btn btn-outline">View Our Services</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>24+</h3>
+                    <p>Years in Business</p>
+                </div>
+                <div class="stat">
+                    <h3>7 Days</h3>
+                    <p>A Week Service</p>
+                </div>
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Licensed &amp; Insured</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <svg class="icon-svg"><use href="#icon-shield"/></svg> Licensed &amp; Insured
+                </div>
+                <div class="trust-item">
+                    <svg class="icon-svg"><use href="#icon-clock"/></svg> Open 7 Days a Week
+                </div>
+                <div class="trust-item">
+                    <svg class="icon-svg"><use href="#icon-dollar"/></svg> Competitive Pricing
+                </div>
+                <div class="trust-item">
+                    <svg class="icon-svg"><use href="#icon-home"/></svg> Locally Owned &amp; Operated
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Services</span>
+                <h2>Complete Septic Solutions</h2>
+                <p>We handle every aspect of septic system maintenance, repair, and installation with expertise and care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><svg class="icon-svg"><use href="#icon-water"/></svg></div>
+                    <h3>Septic Pumping</h3>
+                    <p>Regular septic tank pumping to keep your system running efficiently. We recommend pumping every 3-5 years to prevent backups and extend the life of your system.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg class="icon-svg"><use href="#icon-layers"/></svg></div>
+                    <h3>Drain Field Installation</h3>
+                    <p>Expert drain field design and installation for new construction or replacement of failing systems. We ensure proper sizing and placement for lasting performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg class="icon-svg"><use href="#icon-settings"/></svg></div>
+                    <h3>Lift Station Services</h3>
+                    <p>Installation, maintenance, and repair of lift stations. We keep your pumping systems operating smoothly to prevent costly failures and property damage.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg class="icon-svg"><use href="#icon-search"/></svg></div>
+                    <h3>Septic Inspections</h3>
+                    <p>Comprehensive septic system inspections for home buyers, sellers, and routine maintenance. Get a clear picture of your system's condition and any needed repairs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg class="icon-svg"><use href="#icon-truck"/></svg></div>
+                    <h3>RV Pumping</h3>
+                    <p>Convenient RV septic tank pumping services. Whether at your home or an RV park, we'll get your holding tanks emptied quickly and professionally.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg class="icon-svg"><use href="#icon-tool"/></svg></div>
+                    <h3>Septic Repair &amp; Maintenance</h3>
+                    <p>From minor repairs to complete system overhauls, our experienced team diagnoses and fixes septic issues fast to minimize disruption to your property.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Work</span>
+                <h2>See Our Team in Action</h2>
+                <p>Real projects. Real results. Take a look at the quality and care we bring to every job.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/hands-on.png" alt="Hands-on septic service work in the field">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/drainfield.png" alt="Professional drain field installation in progress">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/jobsite.png" alt="Active septic service job site">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/excavator.png" alt="Excavation work for septic system installation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/adam-truck.png" alt="Adam, owner of Adam's Septic Service, Inc.">
+                </div>
+                <div class="about-content">
+                    <span class="section-label">About Us</span>
+                    <h2>Tampa's Trusted Septic Experts Since 2002</h2>
+                    <p>Adam's Septic Service, Inc. has been proudly serving the Tampa Bay area since 2002. As a locally owned and operated business, we treat every customer like a neighbor &mdash; because that's exactly what you are.</p>
+                    <p>We built our reputation on honest work, fair prices, and reliable service. When you call Adam's, you get an experienced team that shows up on time, gets the job done right, and stands behind their work.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="check"><svg class="icon-svg"><use href="#icon-check"/></svg></span> Est. 2002
+                        </div>
+                        <div class="about-feature">
+                            <span class="check"><svg class="icon-svg"><use href="#icon-check"/></svg></span> Licensed &amp; Insured
+                        </div>
+                        <div class="about-feature">
+                            <span class="check"><svg class="icon-svg"><use href="#icon-check"/></svg></span> Locally Owned
+                        </div>
+                        <div class="about-feature">
+                            <span class="check"><svg class="icon-svg"><use href="#icon-check"/></svg></span> Free Estimates
+                        </div>
+                        <div class="about-feature">
+                            <span class="check"><svg class="icon-svg"><use href="#icon-check"/></svg></span> Open 7 Days a Week
+                        </div>
+                        <div class="about-feature">
+                            <span class="check"><svg class="icon-svg"><use href="#icon-check"/></svg></span> Fair &amp; Honest Pricing
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Choose Us</span>
+                <h2>The Adam's Septic Difference</h2>
+                <p>There are plenty of septic companies in Tampa. Here's why our customers keep coming back.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-card-icon"><svg class="icon-svg"><use href="#icon-shield"/></svg></div>
+                    <h3>24+ Years of Experience</h3>
+                    <p>Over two decades of hands-on experience means we've seen it all and know how to handle it all.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon"><svg class="icon-svg"><use href="#icon-dollar"/></svg></div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We offer competitive pricing without cutting corners. Quality work at a price that's fair.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon"><svg class="icon-svg"><use href="#icon-tool"/></svg></div>
+                    <h3>One Call Does It All</h3>
+                    <p>From pumping to installs to inspections, we're your single source for all things septic.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon"><svg class="icon-svg"><use href="#icon-handshake"/></svg></div>
+                    <h3>Local Owner-Operator</h3>
+                    <p>When you call Adam's, you talk to Adam. Personalized service from a neighbor you can trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Contact -->
+    <section class="hours-section" id="hours">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Hours &amp; Contact</span>
+                <h2>Ready When You Need Us</h2>
+                <p>Open 7 days a week to serve the Tampa Bay community.</p>
+            </div>
+            <div class="hours-grid">
+                <div>
+                    <div class="hours-card">
+                        <h3>
+                            <svg class="icon-svg"><use href="#icon-clock"/></svg>
+                            Hours of Operation
+                        </h3>
+                        <div class="hours-row">
+                            <span class="day">Monday</span>
+                            <span class="time">8:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Tuesday</span>
+                            <span class="time">8:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Wednesday</span>
+                            <span class="time">8:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Thursday</span>
+                            <span class="time">8:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Friday</span>
+                            <span class="time">8:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Saturday</span>
+                            <span class="time">8:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Sunday</span>
+                            <span class="time">8:00 AM - 7:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-info-box">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-row">
+                            <svg class="icon-svg"><use href="#icon-phone"/></svg>
+                            <a href="tel:8139277789">(813) 927-7789</a>
+                        </div>
+                        <div class="contact-row">
+                            <svg class="icon-svg"><use href="#icon-location"/></svg>
+                            <span>6504 25th Avenue<br>Tampa, FL 33619</span>
+                        </div>
+                        <div class="contact-row">
+                            <svg class="icon-svg"><use href="#icon-calendar"/></svg>
+                            <span>Open Monday - Sunday<br>8:00 AM - 7:00 PM</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a href="tel:8139277789" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <svg class="icon-svg"><use href="#icon-phone"/></svg> Call for a Free Estimate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-inner">
+                <span class="section-label">Contact Us</span>
+                <h2>Ready to Get Started?</h2>
+                <p>Whether it's a routine pump-out or an emergency repair, we're here to help. Reach out today for a free, no-obligation quote.</p>
+                <div class="cta-buttons">
+                    <a href="tel:8139277789" class="cta-btn cta-btn-primary">
+                        <svg class="icon-svg"><use href="#icon-phone"/></svg> Get a Free Quote
+                    </a>
+                    <a href="tel:8139277789" class="cta-btn cta-btn-secondary">
+                        <svg class="icon-svg"><use href="#icon-phone"/></svg> (813) 927-7789
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="service-area" id="service-area">
+        <div class="container">
+            <div class="area-content">
+                <span class="section-label">Service Area</span>
+                <h2>Proudly Serving the Greater Tampa Bay Area</h2>
+                <p>Based in Tampa, we provide septic services throughout Hillsborough County and the surrounding communities.</p>
+                <div class="area-tags">
+                    <span class="area-tag">Tampa</span>
+                    <span class="area-tag">Brandon</span>
+                    <span class="area-tag">Seffner</span>
+                    <span class="area-tag">Riverview</span>
+                    <span class="area-tag">Valrico</span>
+                    <span class="area-tag">Plant City</span>
+                    <span class="area-tag">Lakeland</span>
+                    <span class="area-tag">Lutz</span>
+                    <span class="area-tag">Wesley Chapel</span>
+                    <span class="area-tag">Zephyrhills</span>
+                    <span class="area-tag">Thonotosassa</span>
+                    <span class="area-tag">Dover</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="name">Adam's Septic Service, Inc.</div>
+                    <p>Tampa Bay's trusted septic service provider since 2002. Licensed, insured, and committed to keeping your septic system running right.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Septic Pumping</a></li>
+                        <li><a href="#services">Drain Field Installation</a></li>
+                        <li><a href="#services">Lift Stations</a></li>
+                        <li><a href="#services">Septic Inspections</a></li>
+                        <li><a href="#services">RV Pumping</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg class="icon-svg"><use href="#icon-phone"/></svg>
+                            <a href="tel:8139277789">(813) 927-7789</a>
+                        </li>
+                        <li>
+                            <svg class="icon-svg"><use href="#icon-location"/></svg>
+                            <span>6504 25th Avenue<br>Tampa, FL 33619</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Hours</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg class="icon-svg"><use href="#icon-clock"/></svg>
+                            <span>Mon - Sun<br>8:00 AM - 7:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Adam's Septic Service, Inc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Mobile CTA -->
+    <div class="floating-cta">
+        <a href="tel:8139277789">
+            <svg class="icon-svg"><use href="#icon-phone"/></svg> Call Now - (813) 927-7789
+        </a>
+    </div>
+
+</body>
+</html>
